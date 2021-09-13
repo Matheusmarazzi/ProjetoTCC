@@ -38,6 +38,7 @@ function cordenatas(){
     function onError(error) {
         alert('code: '    + error.code    + '\n' + 
               'message: ' + error.message + '\n');
+              document.getElementById('ero').innerHTML = 'ERRO!! REINICIE O APP';
     }
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);

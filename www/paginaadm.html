@@ -1,0 +1,75 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/jquery-3.6.0.min.js"></script>
+  <script src="components/redirecionar.js"></script>
+  <script src="components/local.js"></script>
+  <script src="components/QRcode.js"></script>
+<script src="acao.js"></script>
+  <!--Mapquest  -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+ 
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-sm-2 offset-5">
+         <br>
+         <button class="btn btn-outline-primary btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+          </svg>
+         </button>
+         <button class="btn btn-outline-primary btn-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+          <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+        </svg>
+         </button>
+            <button class="btn btn-outline-danger btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                      <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                    </svg>
+         </button>
+
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-sm-10">
+         <br>
+         <h1 class="text-white">Bem vindo!</h1>
+       </div>
+     </div>
+     <br>
+     <br>     
+    <div class="row" id="conteudo">
+      <div class="col-sm">
+        <br>
+        <h5>Veja a estação de guarda-sol mais próxima de você:</h5>
+        <br>
+          <div class="map" id="map">
+            <br>
+            <br>
+            <h1 id="ero"></h1>
+            
+          </div>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-block" id="codigo">Escanear código QR</button>
+          <button type="button" class="btn btn-outline-primary btn-block" onclick="redirecionar()">Adicionar local no mapa</button>          
+         </div>
+        </div>
+
+
+   </div>
+</body>
+</html>

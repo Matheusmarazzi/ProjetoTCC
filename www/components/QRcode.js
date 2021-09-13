@@ -25,4 +25,3 @@ $(document).on("click","#codigo",function(){
    );
 
 });
-
