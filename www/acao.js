@@ -53,10 +53,12 @@ $(document).on('submit','#logar',function(e) {
 			alert(retorno);
 			$('#login').val("");
 			$('#senha').val("");
-      if(retorno == 'login correto'){
+      if(retorno == 'login correto!'){
       window.location.href = 'pagina.html';
+      }else if(retorno == 'login correto!!'){
+        window.location.href = 'paginaadm.html';
+		  }
       }
-		}
 	});
 
 	e.preventDefault();
