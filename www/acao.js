@@ -12,15 +12,17 @@ $(document).on('submit','#cadastros',function(e) {
 			$('#senha').val("");
 			$('#rg').val("");
 			$('#telefone').val("");
+      redirecionar('index.html');
 		}
 	});
 	//enviar o form sem atualizar a pagina
 	e.preventDefault();
 
+
 });
 // funcao redirecionar
-function redirecionar(){
-window.location.href = 'addlocal.html';
+function redirecionar(pagina){
+window.location = pagina;
 
 };
 //funcao cadastrar localizao
@@ -63,4 +65,12 @@ $(document).on('submit','#logar',function(e) {
 
 	e.preventDefault();
 
+});
+$(document).on('click','#pegarlocal',function(e) {
+    var onSuccess = function(position) {
+    	$('#lat').val(position.coords.latitude);
+			$('#long').val(position.coords.longitude);
+    };
+    var onError = function(){};
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 });

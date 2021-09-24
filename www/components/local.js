@@ -15,10 +15,7 @@
         iconAnchor: markerAnchor.sm,
         popupAnchor: markerPopupAnchor.sm
   });
-      L.marker([-24.1826792927263,-46.78078414096063]).addTo(map);
-     
 
-      map.addControl(L.mapquest.control());
 
 
 
