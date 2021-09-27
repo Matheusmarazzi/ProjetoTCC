@@ -6,7 +6,7 @@ $(document).on('submit','#cadastros',function(e) {
 		data:$(this).serialize(),
 		type:'POST',
 		success: function(retorno){
-			alert(retorno);
+			navigator.notification.alert(retorno, alertCallback, 'Aviso!');
 			$('#nome').val("");
 			$('#login').val("");
 			$('#senha').val("");
@@ -34,7 +34,7 @@ $(document).on('submit','#adicionar',function(e) {
 		data:$(this).serialize(),
 		type:'POST',
 		success: function(retorno){
-			alert(retorno);
+			navigator.notification.alert(retorno, alertCallback, 'Aviso');
 			$('#lat').val("");
 			$('#long').val("");
 		}
@@ -44,6 +44,8 @@ $(document).on('submit','#adicionar',function(e) {
 
 //funçao login
 });
+
+function alertCallback (){};
 $(document).on('submit','#logar',function(e) {
   var url = 'https://maestoques.profrodolfo.com.br/sombra-facil/';
 
@@ -52,7 +54,9 @@ $(document).on('submit','#logar',function(e) {
 		data:$(this).serialize(),
 		type:'POST',
 		success: function(retorno){
-			alert(retorno);
+		navigator.notification.alert(retorno, alertCallback, 'Login');
+
+
 			$('#login').val("");
 			$('#senha').val("");
       if(retorno == 'login correto!'){
@@ -74,3 +78,4 @@ $(document).on('click','#pegarlocal',function(e) {
     var onError = function(){};
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 });
+
